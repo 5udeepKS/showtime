@@ -9,7 +9,7 @@ import { MovieApiServiceService } from 'src/app/service/movie-api-service.servic
 export class HomeComponent {
   constructor(private readonly service: MovieApiServiceService) {}
 
-  bannerApiData: any = [];
+  bannerResult: any = [];
 
   ngOnInit() {
     this.bannerData();
@@ -19,7 +19,7 @@ export class HomeComponent {
   bannerData() {
     this.service.bannerApiData().subscribe((result) => {
       console.log(result);
-      this.bannerApiData = result.results;
+      this.bannerResult = result.results;
     });
   }
 }
